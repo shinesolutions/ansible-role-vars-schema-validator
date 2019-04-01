@@ -1,0 +1,15 @@
+global:
+  type: dict
+  required: True
+  allow_unknown: False
+  empty: False
+  schema:
+    name:
+      type: string
+    age:
+      type: integer
+      min: 10
+      max: 20
+    group1:
+      required: True
+      schema: !include schema_1.yaml

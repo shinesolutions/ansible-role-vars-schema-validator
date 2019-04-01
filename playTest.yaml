@@ -1,0 +1,15 @@
+- name: test my new module
+  hosts: localhost
+  vars_files: 
+    - test_var.yaml
+
+  tasks:
+  - name: validate variables
+    var_validator:
+      var: '{{ vars }}'
+      schema: schema.yaml
+    register: testout
+
+  - name: display the validation result 
+    debug:
+      msg: '{{ testout }}'

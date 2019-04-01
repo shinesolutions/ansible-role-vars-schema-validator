@@ -1,0 +1,20 @@
+os_type:
+  type: string
+  allowed:
+    - rhel7
+    - amazon-linux2
+    - centos7
+url:
+  type: string
+  regex: (s3://|http://|https://|file://)(.+)
+jvm_mem_opts:
+  type: string
+  allowed:
+    - -Xss4m 
+    - -Xms4096m
+    - -Xmx8192m
+user:
+  type: string
+  forbidden: 
+    - root
+    - admin

@@ -1,0 +1,8 @@
+.DS_Store
+.bundle/
+.gems/
+.idea/
+.tmp/
+*.pem
+.gem
+*.retry
