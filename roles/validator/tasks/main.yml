@@ -1,0 +1,9 @@
+- name: validate variables
+  var_validator:
+    var: '{{ vars }}'
+    schema: '{{ schema }}'
+  register: testout
+
+- name: display the validation result 
+  debug:
+    msg: '{{ testout }}'
