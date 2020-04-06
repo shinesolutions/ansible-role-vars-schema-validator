@@ -26,7 +26,7 @@ options:
         required: true
         default: none
         choices:
-          - disable
+            - disable
     schema:
         description:
             - Specify a schema YAML file path for validating the variables.
@@ -34,7 +34,7 @@ options:
         required: true
         default: none
         choices:
-          - disable
+            - disable
 notes:
     - To make sure that only validated variables are sent to the cluster and executed,
 	  the validation task should be executed at the beginning in the playbook. 
@@ -42,7 +42,7 @@ notes:
     - Supported check mode.
 requirements:
 	- python >= 2.7
-    - cerberus == 1.2
+    - cerberus == 1.3.2
 '''
 
 EXAMPLES = '''
