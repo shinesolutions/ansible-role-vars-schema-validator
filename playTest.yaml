@@ -3,13 +3,12 @@
   vars_files: 
     - test_var.yaml
 
-  tasks:
-  - name: validate variables
-    var_validator:
-      var: '{{ vars }}'
-      schema: schema.yaml
-    register: testout
+  roles:
+    - role: './roles/validator'
+      vars:
+        schema: 'schema.yaml'
 
-  - name: display the validation result 
-    debug:
-      msg: '{{ testout }}'
+  tasks:
+    - name: test
+      debug:
+        msg: 'test validating variables'
