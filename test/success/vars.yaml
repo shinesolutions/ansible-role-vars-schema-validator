@@ -1,0 +1,9 @@
+---
+global:
+  name: Little Joe
+  age: 15
+  group1:
+    os_type: centos7
+    url: s3://xxx.xxx.xxx.xxx/xxxxxxx
+    jvm_mem_opts: -Xms4096m
+    user: someuser

@@ -1,0 +1,16 @@
+---
+global:
+  type: dict
+  required: true
+  allow_unknown: false
+  empty: false
+  schema:
+    name:
+      type: string
+    age:
+      type: integer
+      min: 10
+      max: 20
+    group1:
+      required: true
+      schema: !include sub_schema.yaml
