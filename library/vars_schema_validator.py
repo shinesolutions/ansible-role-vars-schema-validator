@@ -1,11 +1,9 @@
 #!/usr/bin/python
-
-# Copyright: (c) 2019, Rongjun XIE <rongjun.xie@shinesolutions.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+'''Python library file for Ansible module vars_schema_validator'''
+import os
+import yaml
+from ansible.module_utils.basic import AnsibleModule
+from cerberus import Validator
 
 DOCUMENTATION = '''
 ---
@@ -54,11 +52,6 @@ vars_schema_validator:
 
 RETURN = '''#'''
 
-import os
-import yaml
-from ansible.module_utils.basic import AnsibleModule
-from cerberus import Validator
-
 def include_constructor(loader, node):
     '''Handler for !include YAML shorthand.'''
     root = os.path.split(loader.stream.name)[0]
@@ -99,6 +92,7 @@ def run_module():
             module.fail_json(msg=err)
 
 def main():
+    '''Run module to validate variables against YAML schema.'''
     run_module()
 
 if __name__ == '__main__':

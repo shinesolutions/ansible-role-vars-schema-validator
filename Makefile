@@ -13,6 +13,7 @@ deps:
 	pip install -r requirements.txt
 
 lint: stage
+	pylint library/*.py
 	yamllint meta/*.y*ml tasks/*.y*ml test/*.y*ml
 	ANSIBLE_ROLES_PATH=stage/roles/ ansible-playbook --syntax-check -i localhost, --connection=local test/playbook.yml
 
