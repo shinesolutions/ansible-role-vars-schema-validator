@@ -10,12 +10,12 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 DOCUMENTATION = '''
 ---
 module: vars_schema_validator
-short_description: Validate playbook variables with a custom YAML schema.
+short_description: Validate Ansible variables against a YAML schema
 description:
-    - The moduele is used to validate variables with a custom YAML schema.
-	  Detailed error messages are provided if the validation fails.
-	  The YAML schema must meet the validation rules in cerberus.
-	  More details are shown in http://docs.python-cerberus.org/en/stable/validation-rules.html.
+    - The module is used to validate variables against a YAML schema.
+	  Detailed error messages are provided when the validation fails.
+	  The YAML schema must meet the validation rules defined in cerberus:
+	  http://docs.python-cerberus.org/en/stable/validation-rules.html .
 version_added: "2.7"
 author: "Rongjun XIE (@rJunx)"
 options:
@@ -29,7 +29,7 @@ options:
             - disable
     schema:
         description:
-            - Specify a schema YAML file path for validating the variables.
+            - Path to YAML schema containing validation rules
 		type: str
         required: true
         default: none
@@ -39,14 +39,14 @@ notes:
     - To make sure that only validated variables are sent to the cluster and executed,
 	  the validation task should be executed at the beginning in the playbook.
     - Users have to provide a correct YAML schema file path in a playbook task.
-    - Supported check mode.
+    - Check mode is supported
 requirements:
 	- python >= 2.7
     - cerberus == 1.3.2
 '''
 
 EXAMPLES = '''
-name: validate variables
+name: Validate Ansible variables using the provided YAML schema
 vars_schema_validator:
     var: '{{ vars }}'
     schema: schema.yaml
@@ -60,7 +60,7 @@ from ansible.module_utils.basic import AnsibleModule
 from cerberus import Validator
 
 def include_constructor(loader, node):
-    '''Handler for !include.'''
+    '''Handler for !include YAML shorthand.'''
     root = os.path.split(loader.stream.name)[0]
     filename = os.path.join(root, loader.construct_scalar(node))
     with open(filename, 'r') as f_stream:
@@ -69,7 +69,7 @@ def include_constructor(loader, node):
 yaml.add_constructor('!include', include_constructor, yaml.SafeLoader)
 
 def run_module():
-    '''Validate the variables.'''
+    '''Validate variables against YAML schema.'''
     module_args = dict(
         var=dict(type='dict', required=True),
         schema=dict(type='str', required=True)
@@ -90,7 +90,7 @@ def run_module():
             if validator.validate(data, schema):
                 module.exit_json(
                     changed=False,
-                    msg="All custom vaiables are validated."
+                    msg="All variables have been validated successfully."
                 )
             else:
                 module.fail_json(msg=validator.errors)
