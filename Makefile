@@ -22,4 +22,4 @@ test: stage
 	# TODO: check exit code of failure test case below
 	ANSIBLE_ROLES_PATH=stage/roles/ ansible-playbook -i localhost, --connection=local test/failure/playbook.yml || echo "Failure test exit code $$?"
 
-.PHONY: ci clean init deps lint test
+.PHONY: ci clean stage deps lint test
