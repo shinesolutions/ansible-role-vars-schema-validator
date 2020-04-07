@@ -8,6 +8,6 @@ lint:
 	ansible-playbook --syntax-check -i localhost, --connection=local test/playbook.yml
 
 test:
-	ansible-playbook --sudo -i localhost, --connection=local test/playbook.yml
+	ansible-playbook -i localhost, --connection=local test/playbook.yml
 
 .PHONY: ci deps lint test

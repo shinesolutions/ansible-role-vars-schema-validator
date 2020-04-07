@@ -13,4 +13,4 @@ global:
       max: 20
     group1:
       required: True
-      schema: !include schema_1.yaml
+      schema: !include sub_schema.yaml
