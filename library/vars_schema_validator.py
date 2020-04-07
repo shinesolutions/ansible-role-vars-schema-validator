@@ -11,7 +11,7 @@ module: vars_schema_validator
 short_description: Validate Ansible variables against a YAML schema
 description:
     - The module is used to validate variables against a YAML schema.
-	  Detailed error messages are provided when the validation fails.
+	  Detailed error messages will be provided when the validation fails.
 	  The YAML schema must meet the validation rules defined in cerberus:
 	  http://docs.python-cerberus.org/en/stable/validation-rules.html .
 version_added: "2.7"
@@ -19,7 +19,7 @@ author: "Rongjun XIE (@rJunx)"
 options:
     var:
         description:
-            - Specify variables required for validation.
+            - Dictionary variable to be validated against the schema
 		type: dict
         required: true
         default: none
@@ -34,9 +34,9 @@ options:
         choices:
             - disable
 notes:
-    - To make sure that only validated variables are sent to the cluster and executed,
-	  the validation task should be executed at the beginning in the playbook.
-    - Users have to provide a correct YAML schema file path in a playbook task.
+    - Defining this role at the beginning of a playbook is a good way to ensure
+      that only validated variables are used within the playbook
+    - Users must provide a correct YAML schema file path in a playbook task
     - Check mode is supported
 requirements:
 	- python >= 2.7
