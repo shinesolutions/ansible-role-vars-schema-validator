@@ -6,33 +6,26 @@ Ansible Role Vars Schema Validator
 
 Ansible Role for validating Ansible variables against a YAML schema.
 
-## PREREQUISITES
+Installation
+------------
 
-- Requires Ansible 2.4 or newer
-- Requires cerberus 1.3.2
-    - [Install Guide](https://docs.python-cerberus.org/en/stable/install.html)
+Add vars_schema_validator role to `requirements.yml` file:
 
-## PLAYBOOK
-There is one demo playbook includes. All varibles and schemas are located in `exmaple` folder.
+    - src: shinesolutions-opensource.vars_schema_validator
+      path: roles/
 
-  - example/test_var.yaml:
-    It contains all variables used in the playbook.
+Download Ansible roles using `ansible-galaxy`:
 
-  - example/schema.yaml:
-    It is the root schema for the variables, which is able to include child schemas with `!include`.
+    ansible-galaxy install -r requirements.yml --force
 
-  - example/schema_1.yaml:
-    It is the child schema for the variables, which is loaded in the root schema.
+Usage
+-----
 
-Run with `ansible-playbook test.yml` to see the results.
+Create a validation schema file using [the rules defined in cerberus](http://docs.python-cerberus.org/en/stable/validation-rules.html).
 
-## Usage
-Add
-```
-  roles:
-    - role: 'validator'
-      vars:
-        schema: 'path/to/your/schema'
-```
-to your ansible playbook to use variable validator.
-More details are referred to [Ansible Role](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html).
+Add the role to playbook and specify the schema path:
+
+    roles:
+      - role: 'validator'
+        vars:
+          schema: 'path/to/your/schema.yaml'
