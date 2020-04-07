@@ -1,3 +1,4 @@
+---
 global:
   type: dict
   required: True

@@ -1,3 +1,4 @@
+---
 os_type:
   type: string
   allowed:
@@ -10,11 +11,11 @@ url:
 jvm_mem_opts:
   type: string
   allowed:
-    - -Xss4m 
+    - -Xss4m
     - -Xms4096m
     - -Xmx8192m
 user:
   type: string
-  forbidden: 
+  forbidden:
     - root
     - admin

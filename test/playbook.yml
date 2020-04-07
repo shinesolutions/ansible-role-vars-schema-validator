@@ -1,0 +1,10 @@
+---
+- name: Test vars-schema-validator
+  hosts: localhost
+  vars_files:
+    - ./schema.yaml
+
+  roles:
+    - role: 'validator'
+      vars:
+        schema: './vars.yaml'
