@@ -1,9 +1,9 @@
 ---
 global:
   type: dict
-  required: True
-  allow_unknown: False
-  empty: False
+  required: true
+  allow_unknown: false
+  empty: false
   schema:
     name:
       type: string
@@ -12,5 +12,5 @@ global:
       min: 10
       max: 20
     group1:
-      required: True
+      required: true
       schema: !include sub_schema.yaml

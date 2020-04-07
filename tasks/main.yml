@@ -1,3 +1,5 @@
+---
+
 - name: Validate Ansible variables using the provided YAML schema
   vars_schema_validator:
     var: '{{ vars }}'

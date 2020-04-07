@@ -3,10 +3,10 @@ dependencies: []
 
 galaxy_info:
   author: shinesolutions
-  description: Ansible Role for validating Ansible variables against a YAML schema
+  description: Ansible Role for validating variables against a YAML schema
   company: "Shine Solutions"
   license: "license (Apache-2)"
   min_ansible_version: 2.9.0
   platforms:
-  - name: GenericUnix
+    - name: GenericUnix
   categories:
