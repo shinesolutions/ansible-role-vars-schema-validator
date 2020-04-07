@@ -1,0 +1,2 @@
+ansible==2.9.6
+pylint==2.4.4
