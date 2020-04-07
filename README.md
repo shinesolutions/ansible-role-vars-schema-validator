@@ -11,7 +11,7 @@ Installation
 
 Add vars_schema_validator role to `requirements.yml` file:
 
-    - src: shinesolutions-opensource.vars_schema_validator
+    - src: shinesolutions_opensource.vars_schema_validator
       path: roles/
 
 Download Ansible roles using `ansible-galaxy`:
