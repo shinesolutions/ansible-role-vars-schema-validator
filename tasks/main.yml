@@ -1,9 +1,9 @@
-- name: validate variables
-  var_validator:
+- name: Validate Ansible variables using the provided YAML schema
+  vars_schema_validator:
     var: '{{ vars }}'
     schema: '{{ schema }}'
-  register: testout
+  register: validation_result
 
-- name: display the validation result 
+- name: Display validation result
   debug:
-    msg: '{{ testout }}'
+    msg: '{{ validation_result }}'

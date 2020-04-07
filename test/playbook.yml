@@ -2,9 +2,9 @@
 - name: Test vars-schema-validator
   hosts: localhost
   vars_files:
-    - ./schema.yaml
+    - ./vars.yaml
 
   roles:
-    - role: 'validator'
+    - role: 'vars_schema_validator'
       vars:
-        schema: './vars.yaml'
+        schema: './schema.yaml'

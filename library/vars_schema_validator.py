@@ -9,12 +9,12 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: var_validator
+module: vars_schema_validator
 short_description: Validate playbook variables with a custom YAML schema.
 description:
     - The moduele is used to validate variables with a custom YAML schema.
 	  Detailed error messages are provided if the validation fails.
-	  The YAML schema must meet the validation rules in cerberus. 
+	  The YAML schema must meet the validation rules in cerberus.
 	  More details are shown in http://docs.python-cerberus.org/en/stable/validation-rules.html.
 version_added: "2.7"
 author: "Rongjun XIE (@rJunx)"
@@ -37,7 +37,7 @@ options:
             - disable
 notes:
     - To make sure that only validated variables are sent to the cluster and executed,
-	  the validation task should be executed at the beginning in the playbook. 
+	  the validation task should be executed at the beginning in the playbook.
     - Users have to provide a correct YAML schema file path in a playbook task.
     - Supported check mode.
 requirements:
@@ -47,7 +47,7 @@ requirements:
 
 EXAMPLES = '''
 name: validate variables
-var_validator:
+vars_schema_validator:
     var: '{{ vars }}'
     schema: schema.yaml
 '''
