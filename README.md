@@ -26,6 +26,6 @@ Create a validation schema file using [the rules defined in cerberus](http://doc
 Add the role to playbook and specify the schema path:
 
     roles:
-      - role: 'validator'
+      - role: 'vars_schema_validator'
         vars:
           schema: 'path/to/your/schema.yaml'
