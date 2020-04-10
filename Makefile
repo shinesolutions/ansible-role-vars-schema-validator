@@ -26,4 +26,9 @@ test: stage
 release:
 	rtk release
 
-.PHONY: ci clean stage deps lint test release
+# Published via shinesolutions-opensource fork in order to avoid authenticating
+# using the main shinesolutions organisation account.
+publish:
+	ansible-galaxy role import shinesolutions-opensource ansible-role-vars-schema-validator
+
+.PHONY: ci clean stage deps lint test release publish
