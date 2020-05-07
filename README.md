@@ -9,14 +9,18 @@ Ansible Role for validating Ansible variables against a YAML schema.
 Installation
 ------------
 
+Install [Cerberus](https://pypi.org/project/Cerberus/) Python package:
+
+    pip install cerberus==1.3.2
+
 Add vars_schema_validator role to `requirements.yml` file:
 
     - src: shinesolutions_opensource.vars_schema_validator
       path: roles/
 
-Download Ansible roles using `ansible-galaxy`:
+Install Ansible roles using `ansible-galaxy`:
 
-    ansible-galaxy install -r requirements.yml --force
+    ansible-galaxy install --role-file requirements.yml --force
 
 Usage
 -----
@@ -26,6 +30,6 @@ Create a validation schema file using [the rules defined in cerberus](http://doc
 Add the role to playbook and specify the schema path:
 
     roles:
-      - role: 'vars_schema_validator'
+      - role: 'shinesolutions_opensource.vars_schema_validator'
         vars:
           schema: 'path/to/your/schema.yaml'

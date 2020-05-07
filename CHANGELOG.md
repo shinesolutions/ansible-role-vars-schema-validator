@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Cerberus installation to install guide
+
+### Fixed
+- Fix missing `shinesolutions_opensource.` prefix to role name documentation
+
 ## 0.10.0 - 2020-04-10
 ### Added
 - Initial version
