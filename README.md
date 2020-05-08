@@ -33,3 +33,39 @@ Add the role to playbook and specify the schema path:
       - role: 'shinesolutions_opensource.vars_schema_validator'
         vars:
           schema: 'path/to/your/schema.yaml'
+
+In the `path/to/your/schema.yaml` file, specify the validation rules.
+
+Required and can't be empty:
+
+    some_var:
+      required: true
+      empty: false
+
+Should be a string and from a predefined list:
+
+    some_var:
+      type: string
+      allowed:
+        - some_value_1
+        - some_value_2
+
+Should be an integer:
+
+    some_var:
+      type: integer
+
+Should be a boolean:
+
+    some_var:
+      type: boolean
+
+Should be a list:
+
+    some_var:
+      type: list
+
+Should be a dictionary/map:
+
+    some_var:
+      type: dict
