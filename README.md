@@ -69,3 +69,9 @@ Should be a dictionary/map:
 
     some_var:
       type: dict
+
+Only allow configuration properties which are defined in the schema:
+Note that this setting is applied to all descendant properties.
+
+    some_var:
+      allow_unknown: false
