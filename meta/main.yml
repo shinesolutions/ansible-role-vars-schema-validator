@@ -1,3 +1,4 @@
+---
 galaxy_info:
   role_name: vars_schema_validator
   version: 0.10.1-pre.0
