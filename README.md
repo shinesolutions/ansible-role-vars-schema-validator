@@ -6,10 +6,12 @@ Ansible Role Vars Schema Validator
 
 Ansible Role for validating Ansible variables against a YAML schema.
 
+This role is useful for making sure that the Ansible variables required for your playbooks are valid according to the specified schema, where you can define whether a variable must be a string, or if the variable is mandatory, and various other use cases supported by [Cerberus](https://docs.python-cerberus.org/en/stable/validation-rules.html).
+
 | Ansible Version | Ansible Role Vars Schema Validator Version |
 |-----------------|--------------------------------------------|
-| 2.x             | 0.10.0                                     |
 | 3.x             | 1.0.0                                      |
+| 2.x             | 0.10.0                                     |
 
 Installation
 ------------
