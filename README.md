@@ -6,6 +6,11 @@ Ansible Role Vars Schema Validator
 
 Ansible Role for validating Ansible variables against a YAML schema.
 
+| Ansible Version | Ansible Role Vars Schema Validator Version |
+|-----------------|--------------------------------------------|
+| 2.x             | 0.10.0                                     |
+| 3.x             | 1.0.0                                      |
+
 Installation
 ------------
 
