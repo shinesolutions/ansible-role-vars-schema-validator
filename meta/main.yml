@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: vars_schema_validator
-  version: 1.1.0
+  version: 1.1.1-pre.0
   author: shinesolutions
   description: Ansible Role for validating variables against a YAML schema
   company: Shine Solutions
