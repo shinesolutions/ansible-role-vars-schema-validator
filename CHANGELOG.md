@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Ansible 4.x support
+
 ### Changed
-- Increase minimum supported Ansible version to 3.0
+- Increase minimum supported Ansible version to 4.0
 
 ## 1.0.0 - 2021-03-18
 ### Added

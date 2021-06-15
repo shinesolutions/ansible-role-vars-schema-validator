@@ -5,7 +5,7 @@ galaxy_info:
   description: Ansible Role for validating variables against a YAML schema
   company: Shine Solutions
   license: Apache-2.0
-  min_ansible_version: 3.0
+  min_ansible_version: 4.0
   platforms:
     - name: GenericLinux
       versions:

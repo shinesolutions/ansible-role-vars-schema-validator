@@ -10,6 +10,7 @@ This role is useful for making sure that the Ansible variables required for your
 
 | Ansible Version | Ansible Role Vars Schema Validator Version |
 |-----------------|--------------------------------------------|
+| 4.x             | 1.1.0                                      |
 | 3.x             | 1.0.0                                      |
 | 2.x             | 0.10.0                                     |
 
