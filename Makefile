@@ -20,8 +20,7 @@ lint: stage
 
 test: stage
 	ANSIBLE_ROLES_PATH=stage/roles/ ANSIBLE_CONFIG=conf/ansible.cfg ansible-playbook -i localhost, --connection=local test/success/playbook.yml
-	# TODO: check exit code of failure test case below
-	ANSIBLE_ROLES_PATH=stage/roles/ ANSIBLE_CONFIG=conf/ansible.cfg ansible-playbook -i localhost, --connection=local test/failure/playbook.yml || echo "Failure test exit code $$?"
+	ANSIBLE_ROLES_PATH=stage/roles/ ANSIBLE_CONFIG=conf/ansible.cfg ansible-playbook -i localhost, --connection=local test/failure/playbook.yml || echo "Failure test exit code $$? - Please note that this is an expected failure covering non-successful test scenario."
 
 release:
 	rtk release
